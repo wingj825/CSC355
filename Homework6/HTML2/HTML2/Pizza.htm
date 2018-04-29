@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>   
+<TITLE>Pizza</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFF80">
+<form NAME="form1" ACTION="mailto:avitabij@strose.edu?subject=Pizza Order&cc=avitabij@strose.edu" METHOD=POST 
+ enctype="text/plain">
+<p align="center">
+John's Pizza Company!
+<BR>
+Choose your size and toppings, click your zip code, type your directions!
+</p>
+<P>
+<! Here's a drop-down list>
+Size: 
+<SELECT NAME="size">  
+<option VALUE="medium"> Medium  
+<option SELECTED VALUE="large"> Large  
+<option VALUE="extra large"> Extra Large
+<option VALUE="really big"> Humongous
+<option VALUE="personal"> Personal
+<option VALUE="small"> Small
+</SELECT>
+<P>
+<! Here's a scrolling area>
+Extras:
+<SELECT NAME="extras" MULTIPLE SIZE="3">  
+<option VALUE="gb"> Garlic Bread  
+<option VALUE="gs"> Green Salad  
+<option VALUE="gks"> Greek Salad
+<option VALUE="it"> Iced Tea
+<option VALUE="cw"> Chicken Wings
+</SELECT>
+<P>
+<! Here are check boxes>
+<INPUT TYPE="checkbox" NAME="check1" VALUE="mushroom" CHECKED> Mushroom  
+<BR>
+<INPUT TYPE="checkbox" NAME="check2" VALUE="pepper" CHECKED> Pepper  
+<BR>
+<INPUT TYPE="checkbox" NAME="check3" VALUE="sausage"> Sausage  
+<BR><INPUT TYPE="checkbox" NAME="check4" VALUE="pepperoni"> Pepperoni  
+<BR><INPUT TYPE="checkbox" NAME="check5" VALUE="pineapple"> Pineapple  
+<BR><INPUT TYPE="checkbox" NAME="check6" VALUE="eggplant"> Eggplant
+<BR><INPUT TYPE="checkbox" NAME="check7" VALUE="onion"> Onions
+<BR><INPUT TYPE="checkbox" NAME="check8" VALUE="anchovy"> Anchovy
+<p>
+Enter your phone number:
+<! Here's a text field>
+<INPUT TYPE="text" NAME="phone" VALUE="999-9999">
+<p>
+Enter your address:
+<! Here's a text field>
+<INPUT TYPE="text" NAME="address" SIZE="50">
+<P>
+Choose your zip code:
+<br>
+<! Here are radio buttons>
+<INPUT TYPE="radio" NAME="zip" VALUE="12206" CHECKED> 12206   
+<INPUT TYPE="radio" NAME="zip" VALUE="12208"> 12208   
+<INPUT TYPE="radio" NAME="zip" VALUE="12210"> 12210   
+<INPUT TYPE="radio" NAME="zip" VALUE="12212"> 12212 
+<INPUT TYPE="radio" NAME="zip" VALUE="12203"> 12203 
+<P>
+Choose your crust:
+<br>
+<table width="100%">
+<tr>
+<td><INPUT TYPE="radio" NAME="crust" VALUE="regular" CHECKED> Regular</td>   
+<td><INPUT TYPE="radio" NAME="crust" VALUE="garlic" CHECKED> Garlic</td>   
+<td><INPUT TYPE="radio" NAME="crust" VALUE="ww" CHECKED> Whole wheat</td>   
+</tr>
+</table> 
+<p>
+<! Here is a text area>
+Enter directions here:
+<BR>
+<TEXTAREA NAME=textarea1 ROWS="6" COLS="50" WRAP="virtual">
+To get to my house:
+</TEXTAREA>
+<P>
+Enter your password. <INPUT TYPE="password" NAME="pass"> 
+<INPUT TYPE="hidden" NAME="from" VALUE="strose">
+<P>
+<INPUT TYPE="reset" VALUE="Back to Default">
+<INPUT TYPE="submit" NAME="submit1" VALUE="Send Order">
+</form>
+</BODY>
+</HTML>

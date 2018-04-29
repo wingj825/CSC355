@@ -1,0 +1,158 @@
+<html>
+<head>
+<script src="jquery-1.11.1.js"></script>
+<script>
+$(document).ready(function(){
+
+$("#firstdiv").mouseenter(function(){
+  $("#firstdiv").css("background-color","pink");});
+
+$("#firstdiv").mouseleave(function(){
+  $("#firstdiv").css("background-color","white");});
+  
+$("#secret").mouseenter(function(){
+  $("#secret").css("background-color","black");});
+  
+$("#secret").mouseleave(function(){
+  $("#secret").css("background-color","white");});
+
+$("#bigger").click(function(){
+  currentSize = parseInt($("p").css("font-size")) + 5;
+  $("p").css("font-size",currentSize);
+  });
+  
+$("#smaller").click(function(){
+  currentSize = parseInt($("p").css("font-size")) - 5;
+  $("p").css("font-size",currentSize);
+  });
+
+
+$("#blue").click(function(){ 
+  $(".changeColor").css("color","blue");
+  });
+
+$("#green").click(function(){
+  $(".changeColor").css("color","green");
+  });
+  
+$("#black").click(function(){
+  $(".changeColor").css("color","black");
+  });
+  
+$("#red").click(function(){
+  $("#firstdiv").css("background-color","red");
+  });
+  
+$("#yellow").click(function(){
+  $("#firstdiv").css("background-color","yellow");
+  });
+  
+$("#white").click(function(){
+  $("#firstdiv").css("background-color","white");
+  });
+
+$("#score").click(function(){
+     $("#player1").animate({left:'200px'}, "slow", function(){$("#ball1").animate({left:'1020px'}, "slow")});
+  });
+
+$(".delete").click(function(){ 
+	$(this).parent().parent().remove();
+  });
+
+
+$(".winners").click(function(){
+	champs = prompt('When was the World Cup won by ' + $(this).prev().prev().prev().prev().text());
+	$(this).text(champs);
+  });
+  
+$("#addCountry").click(function(){
+	country = prompt('Enter country');
+	confederation = prompt('Enter confederation');
+	appearences = prompt('Enter appearences');
+	appear = prompt('Enter year last appeared');
+	won = prompt('Enter last championship');
+	new_row = $("<tr></tr>");
+	new_row.append($("<td></td>").text(country));
+	new_row.append($("<td></td>").text(confederation));
+	new_row.append($("<td></td>").text(appearences));
+	new_row.append($("<td></td>").text(appear));
+	new_cell = $("<td class='çhampionships'></td>").text(won);
+	new_row.append(new_cell);
+	new_row.append($("<td></td>").html('<input type="button" class="delete" value="Delete">'));
+	$("#countries").append(new_row);
+  });
+
+});
+</script>
+</head>
+<body>
+<h1 align="center">Edit the word to match your country.</h1>
+<div id="firstdiv">
+<p><span class="changeColor">GOAL!</span>
+</p>
+</div> 
+<p>Size of Text<br>
+<input type="button" value="Increase" id="bigger">
+<input type="button" value="Decrease" id="smaller">
+<p>Color of Words<br>
+<input type="button" value="Green" id="green">
+<input type="button" value="Blue" id="blue">
+<input type="button" value="Black" id="black">
+<p>Color of Background<br>
+<input type="button" value="Red" id="red">
+<input type="button" value="Yellow" id="yellow">
+<input type="button" value="White" id="white">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id ="secret">
+<p><font color = "white">You found this hidden message!</font></div>
+<br>
+</body><body>
+<h2 align="center">Score a Goal</h1>
+<img src="soccergoal.jpg" height="300" width="300" id="goal" style="position:absolute;left:900;top:600">
+<img src="zlatan.jpg" height="250" width="150" id="player1" style="position:absolute;left:0;top:650">
+<img src="ballkick.jpg" height="100" width="100" id="ball1" style="position:absolute;left:250;top:700">
+<p><input type="button" value="Shoot" id="score"></p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body><body>
+<h3 align="center">Countries in the World Cup</h1>
+<table border="2">
+<thead>
+<tr>
+<th>Country</th><th>Confederation</th><th>World Cup Appearance</th><th>Last Appearence</th><th>Last World Cup Victory</th><th>Delete</th>
+</tr>
+</thead>
+<tbody id="countries">
+<tr>
+<td>United Stares of America</td><td>CONCACAF</td><td>13</td><td class="appearence">2014</td><td class="winners">N/A</td><td><input type="button" class="delete" value="Delete"></td>
+</tr>
+<tr>
+<td>France</td><td>UEFA</td><td>13</td><td class="appearence">2014</td><td class="winners">1998</td><td><input type="button" class="delete" value="Delete"></td>
+</tr>
+<tr>
+<td>Bosnia & Herzegovina</td><td>UEFA</td><td>1</td><td class="appearence">2014</td><td class="winners">N/A</td><td><input type="button" class="delete" value="Delete"></td>
+</tr>
+<tr>
+<td>New Zealand</td><td>OFC</td><td>5</td><td class="appearence">2010</td><td class="winners">N/A</td><td><input type="button" class="delete" value="Delete"></td>
+</tr>
+
+</tbody>
+</table>
+<p><input type="button" value="Add Country" id="addCountry"></p>
+</html>

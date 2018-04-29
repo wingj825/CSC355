@@ -1,0 +1,24 @@
+DROP TABLE PRESIDENTS;
+
+CREATE TABLE PRESIDENTS
+  (PRESIDENT_ID INTEGER NOT NULL,
+   NAME VARCHAR(20) NOT NULL, 
+   STATE VARCHAR(20) NOT NULL,
+   YEAR_ELECTED INTEGER NOT NULL, 
+   PARTY VARCHAR(30) NOT NULL, 
+   CONSTRAINT pk PRIMARY KEY (PRESIDENT_ID));
+
+INSERT INTO PRESIDENTS VALUES
+(1, 'George Washington', 'Virginia', 1789, 'Independent');
+
+INSERT INTO PRESIDENTS VALUES
+(2, 'John Adams', 'Massachusetts', 1797, 'Federalist');
+
+INSERT INTO PRESIDENTS VALUES
+(3, 'Thomas Jefferson', 'Virginia', 1801, 'Democratic-Republican');
+
+INSERT INTO PRESIDENTS VALUES
+(4, 'James Madison', 'Virginia', 1809, 'Democratic-Republican');
+
+INSERT INTO PRESIDENTS VALUES
+(5, 'James Monroe', 'Virginia', 1817, 'Democratic-Republican');

@@ -1,0 +1,103 @@
+﻿<HTML>
+<HEAD>
+<TITLE>Search Table</TITLE>
+
+<SCRIPT>
+    
+if (window.XMLHttpRequest)
+{// code for IE7+, Firefox, Chrome, Opera, Safari
+  	xmlhttp=new XMLHttpRequest();
+}
+else
+{// code for IE6, IE5
+  	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.open("GET","customers.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML;
+
+function showData()
+{ 
+  document.getElementById('display').innerHTML = "";
+  var match = linearSearch();
+
+  if (matches.length == 0)
+  {
+    alert("Sorry, no match");
+    return;
+  }
+  makeData(matches); 
+}
+
+function linearSearch()
+{ 
+  var searchCountry = document.getElementById('country').value;
+  matches = new Array();
+  count = 0;
+  customers = xmlDoc.getElementsByTagName("User"); 
+  for (i = 0; i < customers.length; i++)
+  { 
+     var customer = customers[i];
+     thisCountry = customer.getElementsByTagName("UsrCountry")[0].childNodes[0].nodeValue;
+     if (thisCountry == searchCountry)
+     {
+     	matches[count] = i;
+     	count++;
+     }
+  }
+  return matches;
+}
+
+function makeData(match)
+{		
+  		table = "";
+  	    table += "<TABLE BORDER=2>";
+	    table += "<TR>";
+
+	    // print heading
+	    myCustomer = xmlDoc.getElementsByTagName("User")[0];
+        for (j = 0; j < myCustomer.childNodes.length; j++)
+	    {
+	    	if (myCustomer.childNodes[j].nodeType == 1) // if node is an element
+	    	{
+	    		// display the name of the node in a heading
+          		table += "<TH>" + myCustomer.childNodes[j].nodeName + "</TH>";
+          	}
+        }
+	    table += "</TR>";
+
+	    // add the data
+	    table += "<TR>";
+	    // for each child of that customer
+	    for (i = 0; i < matches.length; i++)
+	    {
+	    	// get the ith match
+	    	myCustomer = xmlDoc.getElementsByTagName("User")[matches[i]];
+	    	for (j = 0; j < myCustomer.childNodes.length; j++)
+	    	{
+	       		// get a child of that node
+	       		thatProperty = myCustomer.childNodes[j];
+	       		if (thatProperty.nodeType == 1) 	    	
+				{
+					// get the value of the first child of that node (the text)
+           	  		table += "<TD>" + thatProperty.childNodes[0].nodeValue + "</TD>";
+           		}
+         	}
+	     	table += "</TR>";
+	     }
+         table += "</TABLE>"; 
+         document.getElementById("display").innerHTML = table;
+
+}
+
+</SCRIPT>
+</HEAD>
+<BODY>
+Enter country: <INPUT TYPE="text" id="country">
+<BR><INPUT TYPE="button" VALUE="Find Information" 
+           onClick='showData();'>
+<DIV id="display">
+</DIV>
+
+</BODY>
+</HTML>

@@ -1,0 +1,51 @@
+﻿<html>
+<head>
+<title>UEFA</title></head>
+<script>
+	function add(a, b, c, d, e)
+	{
+		if(a == null)		
+			alert("Please fill in all text fields!");
+		else if(b == null)
+			alert("Please fill in all text fields!")
+		else if(c == null)
+			alert("Please fill in all text fields!")
+		else if(d == null)
+			alert("Please fill in all text fields!")
+		else{
+			var sum = (parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d));
+			e.value = Math.round(sum);
+		}
+	}
+</script>
+<body>
+
+<p class="center">UEFA</p>
+
+<p class="left">Here are some famous teams from the UEFA Confederation
+<div class="box">
+<li>Germany</li>
+<li>Spain</li>
+<li>Netherlands</li>
+<li>Italy</li>
+<li>England</li>
+<li>Portugal</li>
+</div>
+</p>
+<p>
+<a href="index.htm/"> 
+Back to Main Page
+</a>
+</p>
+<form>
+	Favorite Player’s Jersey Number: <input type=text name=n1 size=10>
+	<br>Salary in Millions of Dollars: <input type=text name=n2 size=10>
+	<br>Career Points(Goals + Assists) per Game: <input type=text name=n3 size=10>
+	<br>Year of First World Cup Game: <input type=text name=n4 size=10>
+	<br>Player Sum Number: <input type=text name=answer size=10>
+	<p></p>
+	<input type=button value="Calculate" onClick="add(n1.value, n2.value, n3.value, n4.value, answer);">
+</form>
+</body>
+
+</html>

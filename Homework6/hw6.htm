@@ -1,0 +1,180 @@
+<html><head><title>Menu</title>
+<script src="browsercodelibrary.js"></script>
+<script src="codelibrary.js"></script>
+<script>
+<!--
+var itemcoloroff = "blue";
+var itemcoloron = "red";
+
+var menu1url = new Array();
+menu1url[1] = "index.htm";
+
+
+var menu2url = new Array();
+menu2url[1] = "concacaf.htm";
+
+
+var menu3url = new Array();
+menu3url[1] = "index.htm";
+menu3url[2] = "uefa.htm";
+menu3url[3] = "afc.htm";
+menu3url[4] = "conmebol.htm";
+
+var menu4url = new Array();
+menu4url[1] = "index.htm";
+menu4url[2] = "caf.htm";
+menu4url[3] = "ofc.htm";
+
+var menu5url = new Array();
+menu5url[1] = "conmebol.htm";
+menu5url[2] = "afc.htm";
+menu4url[3] = "index.htm";
+
+function togglemenu(menuID) {
+	var themenu="dropdown"+menuID;
+	if (isDisplayed(themenu)=="block"){
+		hidemenu(menuID);
+	}
+         else{
+		showmenu(menuID);
+	}
+}
+
+function showmenu(menuID){
+	var themenu="dropdown"+menuID;
+	setCursor("pointer");
+	setDisplay(themenu,"block");
+	var menucontroller=getObj("menucontrol"+menuID);
+	menucontroller.firstChild.firstChild.data="[ - ]";
+}
+
+function hidemenu(menuID){
+	var themenu="dropdown"+menuID;
+	setCursor("auto");
+	setDisplay(themenu,"none");
+	var menucontroller=getObj("menucontrol"+menuID);
+	menucontroller.firstChild.firstChild.data="[ + ]";
+}
+
+function menuFX(thisobj,theevent){
+	if (theevent=="over"){
+		setColor(thisobj,itemcoloron);
+		setCursor("pointer");
+	}
+        else{
+		setColor(thisobj,itemcoloroff);
+		setCursor("auto");
+	}
+}
+
+function goPage(thisobj,menunum,itemnum){
+	menuFX(thisobj,"out");
+	hidemenu(1);	
+	hidemenu(2);	
+	window.location.href = eval("menu"+menunum+"url["+itemnum+"]");
+}
+</script>
+<style type="text/css">
+<!--
+body 	{ background:white; color:black;font-family:serif;} 
+
+h1, h2 	{font-family:sans-serif; color:blue;}
+
+.menucontrol { position:relative; color:blue;
+			   font-weight:bolder;	width:1.5em; }
+
+.menutitle { position:relative; color:blue;
+			 font-weight:bolder; padding:0px; height:1.0em; }
+
+.dropdown {	position:relative; display:none; }
+
+.menuitem {	position:relative; color:blue;
+			font-weight:bolder; left:2.5em; }
+-->
+</style>
+</head>
+<body onload="checkDOM('dhtmlsitesNODOM.html');">
+<p>Homeworks completed so far.
+
+<div onmouseover="setCursor('pointer');"  onmouseout="setCursor('auto');" 
+     onclick="togglemenu(1);">
+  <span id="menucontrol1" class="menucontrol" ><sup>[ + ]</sup></span>
+  <span id="menutitle1" class="menutitle">Homework 1</span>
+</div>
+<!--This div contains a hidden dropdown menu.-->
+<div id="dropdown1" class="dropdown">
+  <div class="menuitem" onmouseover="menuFX(this,'over');" 
+       onmouseout="menuFX(this,'out');" onclick="goPage(this,1,1);">
+         Part 1</div>
+</div>
+
+<div onmouseover="setCursor('pointer');"  onmouseout="setCursor('auto');" 
+ onclick="togglemenu(2);">
+  <span id="menucontrol2" class="menucontrol"><sup>[ + ]</sup></span>
+  <span id="menutitle2" class="menutitle">Homework 2</span>
+</div>
+<!--This div contains a hidden dropdown menu.-->
+<div class="dropdown" id="dropdown2">
+  <div class="menuitem" onmouseover="menuFX(this,'over');" 
+       onmouseout="menuFX(this,'out');" onclick="goPage(this,2,1);">
+    Part 1</div>
+</div>
+<div onmouseover="setCursor('pointer');"  onmouseout="setCursor('auto');" 
+ onclick="togglemenu(3);">
+  <span id="menucontrol3" class="menucontrol"><sup>[ + ]</sup></span>
+  <span id="menutitle3" class="menutitle">Homework 3</span>
+</div>
+<!--This div contains a hidden dropdown menu.-->
+<div class="dropdown" id="dropdown3">
+  <div class="menuitem" onmouseover="menuFX(this,'over');" 
+       onmouseout="menuFX(this,'out');" onclick="goPage(this,3,1);">
+    Part 1</div>
+  <div class="menuitem" onmouseover="menuFX(this,'over');" 
+       onmouseout="menuFX(this,'out');" onclick="goPage(this,3,2);">
+    Part 2</div>
+  <div class="menuitem" onmouseover="menuFX(this,'over');" 
+       onmouseout="menuFX(this,'out');" onclick="goPage(this,3,3);">
+    Part 3</div>
+  <div class="menuitem" onmouseover="menuFX(this,'over');" 
+       onmouseout="menuFX(this,'out');" onclick="goPage(this,3,4);">
+    Part 4</div>
+</div>
+
+<div onmouseover="setCursor('pointer');"  onmouseout="setCursor('auto');" 
+ onclick="togglemenu(4);">
+  <span id="menucontrol4" class="menucontrol"><sup>[ + ]</sup></span>
+  <span id="menutitle4" class="menutitle">Homework 4</span>
+</div>
+<!--This div contains a hidden dropdown menu.-->
+<div class="dropdown" id="dropdown4">
+  <div class="menuitem" onmouseover="menuFX(this,'over');" 
+       onmouseout="menuFX(this,'out');" onclick="goPage(this,4,1);">
+    Part 1</div>
+  <div class="menuitem" onmouseover="menuFX(this,'over');" 
+       onmouseout="menuFX(this,'out');" onclick="goPage(this,4,2);">
+    Part 2</div>
+    <div class="menuitem" onmouseover="menuFX(this,'over');" 
+       onmouseout="menuFX(this,'out');" onclick="goPage(this,4,3);">
+    Part 3</div>
+</div>
+
+<div onmouseover="setCursor('pointer');"  onmouseout="setCursor('auto');" 
+ onclick="togglemenu(5);">
+  <span id="menucontrol5" class="menucontrol"><sup>[ + ]</sup></span>
+  <span id="menutitle5" class="menutitle">Homework 5</span>
+</div>
+<!--This div contains a hidden dropdown menu.-->
+<div class="dropdown" id="dropdown5">
+  <div class="menuitem" onmouseover="menuFX(this,'over');" 
+       onmouseout="menuFX(this,'out');" onclick="goPage(this,5,1);">
+    Part 1</div>
+  <div class="menuitem" onmouseover="menuFX(this,'over');" 
+       onmouseout="menuFX(this,'out');" onclick="goPage(this,5,2);">
+    Part 2</div>
+    <div class="menuitem" onmouseover="menuFX(this,'over');" 
+       onmouseout="menuFX(this,'out');" onclick="goPage(this,4,3);">
+    Part 3</div>
+</div>
+
+</body>
+</html>

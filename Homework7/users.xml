@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserS>
+	<User>
+		<UsrID>C0954327</UsrID>
+		<UsrFirstName>Sheri</UsrFirstName>
+		<UsrLastName>Gordon</UsrLastName>
+		<UsrCountry>Canada</UsrCity>
+		<UsrFavPlayer>Andres Iniesta</UsrFavPlayer>
+	</User>
+	<User>
+		<UsrID>C1010398</UsrID>
+		<UsrFirstName>Jim</UsrFirstName>
+		<UsrLastName>Glussman</UsrLastName>
+		<UsrCountry>Mexico</UsrCity>
+		<UsrFavPlayer>Christiano Ronaldo</UsrFavPlayer>
+	</User>
+	<User>
+		<UsrID>C2388597</UsrID>
+		<UsrFirstName>Beth</UsrFirstName>
+		<UsrLastName>Taylor</UsrLastName>
+		<UsrCountry>United Kingdom</UsrCity>
+		<UsrFavPlayer>Gareth Bale</UsrFavPlayer>
+	</User>
+	<User>
+		<UsrID>C3340959</UsrID>
+		<UsrFirstName>Betty</UsrFirstName>
+		<UsrLastName>Wise</UsrLastName>
+		<UsrCountry>USA</UsrCity>
+		<UsrFavPlayer>Tim Howard</UsrFavPlayer>
+	</User>
+	<User>
+		<UsrID>C3499503</UsrID>
+		<UsrFirstName>Bob</UsrFirstName>
+		<UsrLastName>Mann</UsrLastName>
+		<UsrCountry>France</UsrCity>
+		<UsrFavPlayer>Frank Ribery</UsrFavPlayer>
+	</User>
+</UserS>

@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>OFC</title>
+<LINK rel="stylesheet" href="assignment2.css" type="text/css">
+</head>
+
+<script>
+var Prices = new Array("$100", "$50");
+/*
+function dochange()
+{
+      var index = document.form1.ball.selectedIndex;
+      document.mypic.src=document.form1.ball.value;
+      document.form1.price.value = Prices[index];
+      var price = Prices[index].substring(1);
+      var quantityIndex = document.form1.ordered.selectedIndex;
+      var totalJersey;
+	if(document.getElementById("jersey1").checked = true){
+		++totalJersey;
+	}
+	if(document.getElementById("jersey2").checked = true){
+		++totalJersey;
+	}
+	if(document.getElementById("jersey3").checked = true){
+		++totalJersey;
+	}
+	if(document.getElementById("jersey4").checked = true){
+		++totalJersey;
+	}
+	var jerseyPrice = totalJersey * 60;
+	var fee = document.form1.fee.value;
+	document.form1.total.value = "$" jerseyPrice + fee + price * document.form1.ordered.value;
+}
+*/
+function placeOrder(form1)
+{
+     window2=window.document.open();
+      window2.document.write("<HTML>");
+      window2.document.write("<HEAD>");
+      window2.document.write("<TITLE> Order </TITLE>");
+      window2.document.write("</HEAD>");
+      window2.document.write("<img src="+document.mypic.src+">");
+      window2.document.write("Total cost is " + form1.total.value + "<p>");
+      window2.document.write("<FORM>");
+      window2.document.write("<P>");
+      window2.document.write("</BODY>");
+      window2.document.write("</HTML>");alert("r");
+      window2.document.close();
+}
+</script>
+<body>
+
+<p class="center">OFC</p>
+
+<p class="left">Here are some famous teams from the OFC Confederation
+<div class="box">
+<li>New Zealand</li>
+<li>Tahiti</li>
+<li>American Samoa</li>
+<li>Papau New Guinea</li>
+</div>
+</p>
+<p>
+<a href="index.htm/"> 
+Back to Main Page
+</a>
+
+</p>
+<form NAME="form1">
+<select name="ball" onchange="dochange();"> 
+<option SELECTED VALUE="brazuca.png"> Ball 1 
+<option VALUE="jabulani.jpg"> Ball 2 
+</select>
+<p>
+<img name="mypic" src="brazuca.png" width=100 height=100>
+<p>
+Price per ball:
+<input type="text" value="$100" name="price">
+<p>
+Quantity:
+<select name="ordered" onchange="dochange();">
+<option SELECTED VALUE="1"> 1 
+<option VALUE="2"> 2 
+<option VALUE="3"> 3 
+<option VALUE="4"> 4
+<option VALUE="5"> 5
+</select>
+<p></p>
+Where will this be shipped to?
+<br><INPUT TYPE="radio" name="fee" value="0" > USA 
+<br><INPUT TYPE="radio" name="fee" value="5" > Canada 
+<br><INPUT TYPE="radio" name="fee" value="10" > International 
+<p></p>
+Player Jerseys $60 each:
+<INPUT TYPE="checkbox" NAME="jerseys"> 
+<BR><INPUT TYPE="checkbox" id="jersey1">Lionel Messi
+<BR><INPUT TYPE="checkbox" id="jersey2"> Christiano Ronaldo  
+<BR><INPUT TYPE="checkbox" id="jersey3"> Neymar Jr.  
+<BR><INPUT TYPE="checkbox" id="jersey4"> Clint Dempsey
+<p>
+Total Value:
+<input type="text" value="" name="total">
+<p>
+<input type="button" value="Place Order" onClick="placeOrder(document.form1);">
+</form>
+</body>
+
+</html>

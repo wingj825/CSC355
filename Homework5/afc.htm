@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>AFC</title>
+<LINK rel="stylesheet" href="assignment2.css" type="text/css">
+</head>
+<script>
+var timerID = "";
+var delay = 10;
+var change = 5;
+var y = -150;
+var x = 50;
+function changeLoc()
+{
+	if (document.form1.search.value == "australia")
+		window.open("http://www.socceroos.com.au/", "Australia");
+	else if (document.form1.search.value == "japan")
+		window.open("http://www.jfa.jp/eng/","Japan");
+	else if(document.form1.search.value == "japan")
+		window.open("http://www.kfa.or.kr/eng/","South Korea");
+	else	
+		document.writeIn("Pick a country!");
+}
+
+function init()
+{
+        startAnim();
+
+}
+ 
+function startAnim()
+{
+        if (timerID=="")
+        {
+               timerID = setInterval("animate()",delay);
+        }
+}
+ 
+function animate()
+{
+	if (y <= -150)
+    {
+        change = 2;
+        x = -150;
+    }
+    if (y >= 600)
+    {
+        change = -5;
+    }
+    y = y + change;
+    x = x + 5;   
+    shiftTo(x, y, 2);
+}
+ 
+function getObj(elementID)
+{
+        return document.getElementById(elementID);
+}
+
+function shiftTo(x,y,z)
+{
+  getObj('soccerball').style.left = x + "px";
+  getObj('soccerball').style.top = y + "px";
+  getObj('soccerball').style.zIndex = z;
+  getObj('xloc').value = x;
+  getObj('yloc').value = y;
+}
+</script>
+<body onload="startAnim();">
+
+<p class="center">AFC</p>
+<p class="left">Here are some famous teams from the AFC Confederation
+<div class="box">
+<li>Australia</li>
+<li>Japan</li>
+<li>South Korea</li>
+<li>Iran</li>
+<li>North Korea</li>
+<li>China</li>
+</div>
+</p>
+<p>
+<a href="index.htm/"> 
+Back to Main Page
+</a>
+</p>
+Check out some of theese team's websites!
+<form name = form1>
+	<select name="search" onChange="changeLoc()">
+		<option value="default">Choose</option>
+		<option value="australia">Australia</option>
+		<option value="japan">Japan</option>
+		<option value="southkorea">South Korea</option>
+	</select>
+</form>
+<style type="text/css">
+#title1 { position:absolute;  left:200px; top:80px; 
+                  z-index:3; color:yellow; font-family:sans-serif;  
+                  font-weight:bold; font-size:400%;}
+#title2 { position:absolute; left:205px; top:85px; 
+                  z-index:1; color:navy; font-family:sans-serif;  
+                  font-weight:bold; font-size:400%;}
+#soccerball { position:absolute; left:0px; top:-150px; z-index:2; }
+h1 { font-family:sans-serif; font-size:150%;}
+</style>
+</head>
+<body onload="init();">
+x pos <input type="text" id="xloc" value="500" size="5"><br><br>
+y pos <input type="text" id="yloc" value="800" size="5"></p>
+<img src="soccerball.png" id="soccerball" width="110" height="150">
+</body>
+</html>

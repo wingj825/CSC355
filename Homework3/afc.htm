@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>AFC</title>
+<LINK rel="stylesheet" href="assignment2.css" type="text/css">
+</head>
+<script>
+function changeLoc()
+{
+	if (document.form1.search.value == "australia")
+		window.open("http://www.socceroos.com.au/", "Australia");
+	else if (document.form1.search.value == "japan")
+		window.open("http://www.jfa.jp/eng/","Japan");
+	else if(document.form1.search.value == "japan")
+		window.open("http://www.kfa.or.kr/eng/","South Korea");
+	else	
+		document.writeIn("Pick a country!");
+}
+</script>
+<body>
+
+<p class="center">AFC</p>
+<p class="left">Here are some famous teams from the AFC Confederation
+<div class="box">
+<li>Australia</li>
+<li>Japan</li>
+<li>South Korea</li>
+<li>Iran</li>
+<li>North Korea</li>
+<li>China</li>
+</div>
+</p>
+<p>
+<a href="index.htm/"> 
+Back to Main Page
+</a>
+</p>
+Check out some of theese team's websites!
+<form name = form1>
+	<select name="search" onChange="changeLoc()">
+		<option value="default">Choose</option>
+		<option value="australia">Australia</option>
+		<option value="japan">Japan</option>
+		<option value="southkorea">South Korea</option>
+	</select>
+</form>
+</body>
+
+</html>

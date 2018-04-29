@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Image Maps </title>
+<! Created by John Avitabile>
+</head>
+<body text="brown" bgcolor="yellow">
+<p align=center>
+<font size=5>Image Maps</font>
+<p>
+<img SRC="boston.gif" usemap="#bostonmap" height=250 width=400>
+<br>
+<map name="bostonmap">
+<area shape="rect" href="BunkerHill.htm" coords="160,0,200,30"
+      alt="Bunker Hill">
+<area shape="rect" href="ScienceMuseum.htm" coords="120,40,160,70">
+<area shape="rect" href="Logan.htm" coords="280,50,300,80">
+<area shape="circle" href="Library.htm" coords="122, 128, 20"
+      alt="Public Library">
+<area shape="poly" href="gardner.htm" coords="60, 163, 49, 180, 69, 180"
+      alt="Museum">
+<area shape="circle" href="MeetingHouse.htm"
+      coords="177,104,15" alt="Old South Meeting House">
+
+</map>
+<p>There is an image map on this page. You use an graphics file as an image
+map.
+<p>There are hot areas on the image map that the user can click on. Typically,
+the hot areas connect to other pages.
+<p>The image map itself has a Cartesian coordinate system on top of it.
+So each point on the image map can be defined by two
+<br>points - an x axis coordinate and a y axis coordinate. The size of
+the image map on the next page is 400 by 250. So the
+<br>upper-left corner of the image map is the point 0,0; the lower-right
+corner is the point 400,250; the upper right corner is the
+<br>point 400,0; and the lower left corner is the point 0,250.
+<p>In order to determine where the hot areas should be, you have to guess
+the coordinates of a rectangle that defines that area.
+<br>You need to estimate the location of the upper left and lower right
+corners of the rectangle.
+<p>Try out the image map on this page. Look at the code&nbsp; to see how
+the image map was implemented.
+<p>The MAP container is used to define an imagemap. Its one attribute is
+NAME, which is set to "boston" in this case.
+<p>Within the MAP container are three AREA commands. The AREA command is
+used to define a region of the map that will be a hot area. There are three
+attributes for the AREA command. The SHAPE attribute is set to RECT, since
+a rectangular region is being defined. The HREF attribute is set to the
+web address or name of the file that the hot area will link to. The COORDS
+attribute contains four numbers separated by commas. The first two numbers
+define the x and y coordinates of the upper left corner of the rectangle.
+The last two numbers define the x and y coordinates of the lower right
+corner of the rectangle.
+<p>The IMG command that includes the graphic file must have one more attribute
+set. The USEMAP attribute must be set to the name of the map, in this case
+"#boston".
+<p>After you see how this image map works, modify the HTML file so that
+there are three additional hot areas that take you to files named Gardner.htm,
+Library.htm, and MeetingHouse.htm. These files are already on your disk.
+
+</body>
+</html>

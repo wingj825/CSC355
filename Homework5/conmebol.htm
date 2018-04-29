@@ -1,0 +1,63 @@
+﻿<html>
+<head>
+<title>CONMEBOL</title>
+<LINK rel="stylesheet" href="assignment2.css" type="text/css">
+</head>
+<script>
+function changePic()
+{
+	if(document.form2.country.value == "Argentina" && document.form2.number.value == 10)
+		document.pic1.src="messi.jpg";
+	else if(document.form2.country.value == "Uruguay" && document.form2.number.value == 9)
+		document.pic1.src="suarez.jpg";
+	else if(document.form2.country.value == "Brazil" && document.form2.number.value == 10)
+		document.pic1.src="neymar.jpg";
+	else if(document.form2.country.value == "Colombia" && document.form2.number.value == 10)
+		document.pic1.src="rodriguez.jpg";
+	else
+		alert("No results found!");
+}
+</script>
+<script>
+function changeGreeting()
+{
+  var theNode = getObj("statement");
+  var newGreeting = prompt("Type a greeting.","Lionel Messi");
+  theNode.firstChild.nodeValue=newGreeting;
+}
+function getObj(elementID)
+{
+  return document.getElementById(elementID);
+}
+</script>
+<body>
+
+<p class="center">CONMEBOL</p>
+
+<p class="left">Here are some famous teams from the CONMEBOL Confederation
+<div class="box">
+<li>Brazil</li>
+<li>Argentina</li>
+<li>Uruguay</li>
+<li>Chile</li>
+<li>Peru</li>
+<li>Paraguay</li>
+</div>
+</p>
+<p id="player"><span id="statement">Lionel Messi</span> is my favorite player.</p>
+<input type="button" onClick="changeGreeting()" 
+value="Change Statement">
+<p>
+<a href="index.htm/"> 
+Back to Main Page
+</a>
+</p>
+<form name="form2">
+	Enter a country: <input type=text name=country size = 15>
+	<br>Enter a number: <input type=text name=number size = 7>	
+	<br><input type=button value="Generate" onClick="changePic()";>
+</form>
+<img src=messi.jpg name="pic1" width="630" height="420">
+</body>
+
+</html>

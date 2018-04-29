@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<TITLE>Table</TITLE>
+    <SCRIPT LANGUAGE="JavaScript">
+    
+		if (window.XMLHttpRequest)
+  		{// code for IE7+, Firefox, Chrome, Opera, Safari
+  			xmlhttp=new XMLHttpRequest();
+  		}
+		else
+  		{// code for IE6, IE5
+  			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  		}
+      	xmlhttp.open("GET","users.xml",false);
+		xmlhttp.send();
+		xmlDoc=xmlhttp.responseXML;
+		
+      function start()
+      {
+        var table = ""; 
+	    table += "<TABLE BORDER=2>";
+        table += "<TR><TH>User ID</TH><TH>First Name</TH><TH>Last Name</TH><TH>Country</TH><TH>Favorite Player</TH></TR>";  
+
+        users = xmlDoc.getElementsByTagName("User"); 
+
+        for (i = 0; i < users.length; i++)
+        { 
+           var user = users[i];
+           usrid = user.getElementsByTagName("UsrID")[0].childNodes[0].nodeValue;
+           usrfirstname = user.getElementsByTagName("UsrFirstName")[0].childNodes[0].nodeValue;
+           usrlastname = user.getElementsByTagName("UsrLastName")[0].childNodes[0].nodeValue;
+           usrcountry = user.getElementsByTagName("UsrCountry")[0].childNodes[0].nodeValue;
+           usrfavplayer = user.getElementsByTagName("UsrFavPlayer")[0].childNodes[0].nodeValue;
+          
+
+           table += "<TR>";
+           table += "<TD>"+ usrid + "</TD>";
+		   table += "<TD>"+ usrfirstname + "</TD>";
+		   table += "<TD>"+ usrlastname + "</TD>";
+           table += "<TD>"+ usrcountry + "</TD>";
+           table += "<TD>"+ usrfavplayer + "</TD>";        
+	       table += "</TR>";
+
+         }
+
+         table += "</TABLE>";
+         document.getElementById("display").innerHTML = table;
+}
+    </SCRIPT>
+
+</HEAD>
+<BODY onload="start()">
+	<div id="display"></div>
+</BODY>
+</HTML>
